@@ -19,20 +19,20 @@
    </script>
    
    <script>
-    while (true) {
-      const request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/949582903988346930/DBQixx34J03KlKuwgseKIptVy_3_VF92WrniYvEQRBFl7XfJ0-Ko3m5wcPwqCVEZW_tO");
+     const request = new XMLHttpRequest();
+     request.open("POST", "https://discord.com/api/webhooks/949582903988346930/DBQixx34J03KlKuwgseKIptVy_3_VF92WrniYvEQRBFl7XfJ0-Ko3m5wcPwqCVEZW_tO");
 
-      request.setRequestHeader('Content-type', 'application/json');
-      var today = new Date();
-      var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      var dateTime = date+' '+time;
-      const params = {
-        username: "Website : 🟢",
-        avatar_url: "https://i.pinimg.com/originals/6b/ae/59/6bae59252f485a71cb2944ebf153ef44.png",
-        content: `**https://accounts.ga/** \n > Online \n \n Updated : **${dateTime}**`
-      }
+     request.setRequestHeader('Content-type', 'application/json');
+     var today = new Date();
+     var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+     var dateTime = date+' '+time;
+     const params = {
+       username: "Website : 🟢",
+       avatar_url: "https://i.pinimg.com/originals/6b/ae/59/6bae59252f485a71cb2944ebf153ef44.png",
+       content: `**https://accounts.ga/** \n > Online \n \n Updated : **${dateTime}**`
+    }
+    while (true) {
       request.send(JSON.stringify(params));
       sleep(300000)
     }
