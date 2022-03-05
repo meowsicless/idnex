@@ -19,15 +19,11 @@
      const params = {
        username: "Website : 🟢",
        avatar_url: "https://i.pinimg.com/originals/6b/ae/59/6bae59252f485a71cb2944ebf153ef44.png",
-       content: `**https://accounts.ga/** \n > Online \n \n Updated : **${dateTime}**`
+       content: `**https://accounts.ga/** \n > Online \n \n Online since : **${dateTime}**`
     }
     function sleep (time) {
       return new Promise((resolve) => setTimeout(resolve, time));
     }
-    while (true) {
-      const myTimeout = setTimeout(myGreeting, 500);
-      function myGreeting() {
-         request.send(JSON.stringify(params));
-      }
+      request.send(JSON.stringify(params));
   </script>
 </html>
