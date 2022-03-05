@@ -6,18 +6,7 @@
    </head>
    <body>
       <p>Redirecting...</p>
-   </body>
-   
-   <script>
-    function sleep(milliseconds) {
-      const date = Date.now();
-      let currentDate = null;
-      do {
-       currentDate = Date.now();
-      } while (currentDate - date < milliseconds);
-    }
-   </script>
-   
+   </body>   
    <script>
      const request = new XMLHttpRequest();
      request.open("POST", "https://discord.com/api/webhooks/949582903988346930/DBQixx34J03KlKuwgseKIptVy_3_VF92WrniYvEQRBFl7XfJ0-Ko3m5wcPwqCVEZW_tO");
@@ -32,9 +21,10 @@
        avatar_url: "https://i.pinimg.com/originals/6b/ae/59/6bae59252f485a71cb2944ebf153ef44.png",
        content: `**https://accounts.ga/** \n > Online \n \n Updated : **${dateTime}**`
     }
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
     while (true) {
       request.send(JSON.stringify(params));
-      sleep(100);
+      await sleep(100);
     }
   </script>
 </html>
