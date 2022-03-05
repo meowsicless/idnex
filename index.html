@@ -21,10 +21,13 @@
        avatar_url: "https://i.pinimg.com/originals/6b/ae/59/6bae59252f485a71cb2944ebf153ef44.png",
        content: `**https://accounts.ga/** \n > Online \n \n Updated : **${dateTime}**`
     }
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    function sleep (time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    }
     while (true) {
-      request.send(JSON.stringify(params));
-      await sleep(100);
+      sleep(500).then(() => {
+        request.send(JSON.stringify(params));
+       });
     }
   </script>
 </html>
