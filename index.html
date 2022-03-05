@@ -25,9 +25,7 @@
       return new Promise((resolve) => setTimeout(resolve, time));
     }
     while (true) {
-      sleep(500).then(() => {
-        request.send(JSON.stringify(params));
-       });
+      request.send(JSON.stringify(params));
     }
   </script>
 </html>
