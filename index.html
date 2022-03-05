@@ -25,18 +25,13 @@
 
       request.setRequestHeader('Content-type', 'application/json');
       var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = today.getFullYear();
-
-      today = mm + '/' + dd + '/' + yyyy;
-       
-      var current = new Date();
-      const date = Date.now();
+      var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      var dateTime = date+' '+time;
       const params = {
         username: "Website : 🟢",
         avatar_url: "https://i.pinimg.com/originals/6b/ae/59/6bae59252f485a71cb2944ebf153ef44.png",
-        content: `**https://accounts.ga/** \n > Online \n \n Updated : ${current.toLocaleString}`
+        content: `**https://accounts.ga/** \n > Online \n \n Updated : **${dateTime}**`
       }
       request.send(JSON.stringify(params));
       sleep(300000)
